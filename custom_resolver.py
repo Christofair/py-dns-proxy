@@ -65,7 +65,7 @@ class RRRResolver(Resolver):
         self.blocked_urls = fu.fetch_set_of_urls()
         try:
             self.blocked_urls.difference_update([ 'google.com', 'duckduckgo.com', 'github.com',
-                'messenger.com', 'facebook.com'])
+                'messenger.com', 'facebook.com', 'www.facebook.com'])
         except Exception as e:
             print(e)
 
@@ -82,8 +82,10 @@ class RRRResolver(Resolver):
 
     def query(self, query, timeout):
         if str(query.name) in self.blocked_urls:
+            print('refused %s' % str(query.name))
             raise error.DNSQueryRefusedError
         else:
+            print(str(query.name))
             return super().query(query,timeout)
         # r = None
         # while r is None:
