@@ -21,10 +21,11 @@ There is awful method to parse easylist, that regular expression can fetch even 
 * Fix parsing easylist.txt or creating special own list.
 * Connect to remote DNS by TLS connection
 
-# Instalation
+# Instalation and running
+This file have to be run in administrative mode, because there is low value port (UDP53). Often you have to restart browser and/or network to see effects.
 1. Prepare virtual environment for python (i.e. with command: "python -m venv .")
 2. Clone this repository.
 3. Install requirements. (./Scripts/pip install -r requirement.txt)
 4. Run script (now it has not  name yet) "client.py"
 5. Set in yours OS dns server as localhost (127.0.0.1).
-6. Let's test B) (This file have to be run in administrative mode, because there is low value port (UDP53))
+6. Let's test B) 
