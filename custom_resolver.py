@@ -55,19 +55,18 @@ class RRRResolver(Resolver):
 
     def __init__(self, path, **kwargs):
         super().__init__(**kwargs)
-        # self._inner_resolver = Resolver(servers=[('1.1.1.1',53)])
         # try:
         #     self._blocked_adresses_file = open(path, 'rb')
         # except OSError:
         #     self._blocked_adresses_file = open('emptyfile','wb')
         #     self._blocked_adresses_file.close()
         #     self._blocked_adresses_file = open('emptyfile','rb')
-        self.blocked_urls = fu.fetch_set_of_urls()
-        try:
-            self.blocked_urls.difference_update([ 'google.com', 'duckduckgo.com', 'github.com',
-                'messenger.com', 'facebook.com', 'www.facebook.com', 'discord.com'])
-        except Exception as e:
-            print(e)
+        self.blocked_urls = set()
+        try: self.blocked_urls = fu.fetch_set_of_urls_from_file(path)
+        except OSError: print('Try of openning file failed')
+        if self.blocked_urls != set():
+            self.blocked_urls.difference_update(['0.0.0.0'])
+        print(self.blocked_urls)
 
     # def is_blocked(self, domain_name):
     #     local_decode = lambda dn: dn.encode('ascii') if type(dn) is str else dn

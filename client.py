@@ -7,7 +7,7 @@ import re, os
 
 def main():
     factory = server.DNSServerFactory(
-            clients=[ RRRResolver('urls', servers=[('1.1.1.1', 53)])]
+            clients=[ RRRResolver('adservers.txt', servers=[('1.1.1.1', 53)])]
             )
     protocol = dns.DNSDatagramProtocol(controller=factory)
     reactor.listenUDP(53, protocol)

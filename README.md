@@ -1,5 +1,8 @@
 # py-dns-proxy
-Server DNS as proxy, which blocks desired addresses from the list (may called 'blockedlist').
+Server DNS as proxy, which blocks desired addresses from the list (may called 'blockedlist'). 
+
+### version 1.2
+Current version use list from (THIS)[https://github.com/anudeepND/blacklist/] repository.
 
 # Requirements
 * attrs==21.4.0
@@ -8,14 +11,13 @@ Server DNS as proxy, which blocks desired addresses from the list (may called 'b
 * hyperlink==21.0.0
 * idna==3.3
 * incremental==21.3.0
+* regex==2022.3.2
 * six==1.16.0
 * Twisted==22.2.0
 * twisted-iocpsupport==1.0.2
 * typing-extensions==4.1.1
 * zope.interface==5.4.0
 
-First version is very poor, don't trust it.
-There is awful method to parse easylist, that regular expression can fetch even string like "2.0". XD
 
 # ToDo:
 * Fix parsing easylist.txt or creating special own list.
