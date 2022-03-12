@@ -2,17 +2,17 @@
 Server DNS as proxy, which blocks desired addresses from the list (may called 'blockedlist').
 
 # Requirements
-attrs==21.4.0
-Automat==20.2.0
-constantly==15.1.0
-hyperlink==21.0.0
-idna==3.3
-incremental==21.3.0
-six==1.16.0
-Twisted==22.2.0
-twisted-iocpsupport==1.0.2
-typing-extensions==4.1.1
-zope.interface==5.4.0
+* attrs==21.4.0
+* Automat==20.2.0
+* constantly==15.1.0
+* hyperlink==21.0.0
+* idna==3.3
+* incremental==21.3.0
+* six==1.16.0
+* Twisted==22.2.0
+* twisted-iocpsupport==1.0.2
+* typing-extensions==4.1.1
+* zope.interface==5.4.0
 
 First version is very poor, don't trust it.
 There is awful method to parse easylist, that regular expression can fetch even string like "2.0". XD
