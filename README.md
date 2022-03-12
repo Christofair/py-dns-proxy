@@ -28,3 +28,9 @@ There is awful method to parse easylist, that regular expression can fetch even 
 4. Run script (now it has not  name yet) "client.py"
 5. Set in yours OS dns server as localhost (127.0.0.1).
 6. Let's test B)
+
+<details>
+  <summary> MindMap image in polish </summary>
+  <img src="https://github.com/Christofair/py-dns-proxy/blob/master/dns_mm.png" alt="mind map about dns">
+  <b>Check out "DNS.mm" file. Needs <a href="https://sourceforge.net/projects/freeplane/">Freeplane</a> to open.</b>
+</details>
