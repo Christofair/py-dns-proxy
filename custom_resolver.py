@@ -65,7 +65,7 @@ class RRRResolver(Resolver):
         self.blocked_urls = fu.fetch_set_of_urls()
         try:
             self.blocked_urls.difference_update([ 'google.com', 'duckduckgo.com', 'github.com',
-                'messenger.com', 'facebook.com', 'www.facebook.com'])
+                'messenger.com', 'facebook.com', 'www.facebook.com', 'discord.com'])
         except Exception as e:
             print(e)
 
