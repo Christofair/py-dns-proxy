@@ -22,7 +22,7 @@ There is awful method to parse easylist, that regular expression can fetch even 
 * Connect to remote DNS by TLS connection
 
 # Instalation and running
-This file have to be run in administrative mode, because there is low value port (UDP53). Often you have to restart browser and/or network to see effects.
+This file have to be run in administrative mode, because there is low value port (UDP 53). Often you have to restart browser and/or network to see effects.
 1. Prepare virtual environment for python (i.e. with command: "python -m venv .")
 2. Clone this repository.
 3. Install requirements. (./Scripts/pip install -r requirement.txt)
