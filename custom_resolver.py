@@ -63,17 +63,21 @@ class RRRResolver(Resolver):
         #     self._blocked_adresses_file.close()
         #     self._blocked_adresses_file = open('emptyfile','rb')
         self.blocked_urls = fu.fetch_set_of_urls()
+        try:
+            self.blocked_urls.difference_update([ 'google.com', 'duckduckgo.com' ])
+        except Exception as e:
+            print(e)
 
-    def is_blocked(self, domain_name):
-        local_decode = lambda dn: dn.encode('ascii') if type(dn) is str else dn
-        hash = hashlib.sha256(local_decode(domain_name))
-        while True:
-            block = self._blocked_adresses_file.read1(hash.digest_size)
-            if block == b'':  # end of file
-                break
-            if block == hash.digest():  # found address in block file
-                return True
-        return False
+    # def is_blocked(self, domain_name):
+    #     local_decode = lambda dn: dn.encode('ascii') if type(dn) is str else dn
+    #     hash = hashlib.sha256(local_decode(domain_name))
+    #     while True:
+    #         block = self._blocked_adresses_file.read1(hash.digest_size)
+    #         if block == b'':  # end of file
+    #             break
+    #         if block == hash.digest():  # found address in block file
+    #             return True
+    #     return False
 
     def query(self, query, timeout):
         if str(query.name) in self.blocked_urls:
