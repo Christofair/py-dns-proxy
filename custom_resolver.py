@@ -65,7 +65,8 @@ class RRRResolver(Resolver):
         try: self.blocked_urls = fu.fetch_set_of_urls_from_file(path)
         except OSError: print('Try of openning file failed')
         if self.blocked_urls != set():
-            self.blocked_urls.difference_update(['0.0.0.0'])
+            # list of addresses to remove
+            self.blocked_urls.difference_update(['0.0.0.0', 'github.com'])
         print(self.blocked_urls)
 
     # def is_blocked(self, domain_name):
