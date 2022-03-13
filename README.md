@@ -20,7 +20,7 @@ Current version use list from [THIS](https://github.com/anudeepND/blacklist/) re
 
 
 # ToDo:
-* Fix parsing easylist.txt or creating special own list.
+* <strike>Fix parsing easylist.txt or creating special own list</strike>
 * Connect to remote DNS by TLS connection
 
 # Instalation and running
