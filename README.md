@@ -2,7 +2,7 @@
 Server DNS as proxy, which blocks desired addresses from the list (may called 'blockedlist'). 
 
 ### version 1.2
-Current version use list from (THIS)[https://github.com/anudeepND/blacklist/] repository.
+Current version use list from [THIS](https://github.com/anudeepND/blacklist/) repository.
 
 # Requirements
 * attrs==21.4.0
