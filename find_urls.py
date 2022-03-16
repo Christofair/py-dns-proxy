@@ -1,7 +1,7 @@
 import regex
-import hashlib as Hl 
+# import hashlib as Hl 
 import sys
-from urllib import request
+# from urllib import request
 
 
 def filtered_files(t: str):
@@ -31,7 +31,8 @@ def async_fetch_urls_from_remote_file(url_path: str):
     # return downloader.deferred
 
 def sync_fetch_set_urls_from_remote(url: str) -> set:
-    """ Open url and then searching there URL-s """
+    """ Open url and then searching there URL-s
+        to use uncomment import with requests """
     r = request.urlopen(url)
     data = r.read()
     data = data.decode('utf-8')
@@ -61,7 +62,7 @@ def save_to_binary(path, _set):
 
 # save_to_binary('urls', srl)
 
-def szukaj_haszy():
+def find_hash():
     # test sprawdzania hashy
     try: file = open('urls', 'rb')
     except OSError:
@@ -82,7 +83,6 @@ def szukaj_haszy():
             if block == hash.digest():
                 print('znaleziono adres: %s' % url)
                 break
-
     file.close()
 
 def main(*args):
