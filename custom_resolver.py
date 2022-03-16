@@ -1,4 +1,5 @@
 from twisted.internet.interfaces import IResolver
+from twisted.internet import defer
 from twisted.names.client import Resolver
 from twisted.names.dns import Message
 from twisted.names import dns, error, common
@@ -22,10 +23,10 @@ class RRRResolver(Resolver):
     def query(self, query, timeout):
         if str(query.name) in self.blocked_urls:
             print('refused %s' % str(query.name))
-            raise error.DNSQueryRefusedError
+            return defer.fail(error.DomainError())
         else:
             print(str(query.name))
-            return super().query(query,timeout)
+            return super().query(query, timeout)
         # r = None
         # while r is None:
         #     r = self.is_blocked(str(query.name))
