@@ -1,8 +1,9 @@
-from custom_resolver import RRRResolver
 from twisted.internet import reactor
 from twisted.names import client, server, dns, hosts
 from custom_resolver import RRRResolver
+import dns_service  # in that import I created service and attached it to application
 import re, os
+from twisted.application import service
 
 
 def main():
@@ -14,4 +15,4 @@ def main():
     reactor.run()
 
 if __name__ == "__main__":
-    main()
+    reactor.run()
